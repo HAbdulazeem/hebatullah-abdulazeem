@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hebatullah Abdulazeem, MD, MSc — Physician, Health Scientist, Systematic Reviewer, Digital Health Researcher at Technical University of Munich.">
+  <title>Hebatullah Abdulazeem | Researcher & Health Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #2C6E49;
+      --green-light: #4C9F70;
+      --cream: #F4F1DE;
+      --navy: #1A1A2E;
+      --bg: #F8F9FA;
+      --card: #FFFFFF;
+      --text: #2D2D3F;
+      --text-light: #6B6B80;
+      --border: #E8E8EE;
+      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --max-w: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--green); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--green-light); }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; line-height: 1.3; }
+    h2 { font-size: 2rem; margin-bottom: 40px; position: relative; display: inline-block; }
+    h2::after {
+      content: '';
+      position: absolute; bottom: -8px; left: 0;
+      width: 48px; height: 3px; background: var(--green); border-radius: 2px;
+    }
+    .section-center { text-align: center; }
+    .section-center h2::after { left: 50%; transform: translateX(-50%); }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000; padding: 0 24px;
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    nav .logo { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.15rem; color: var(--green); white-space: nowrap; }
+    nav ul { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; justify-content: flex-end; }
+    nav ul a {
+      padding: 6px 14px; border-radius: 6px; font-size: 0.875rem;
+      color: var(--text); transition: background .2s, color .2s;
+    }
+    nav ul a:hover { background: var(--cream); color: var(--green); }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      nav ul {
+        display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
+        background: white; border-bottom: 1px solid var(--border); padding: 12px 24px;
+      }
+      nav ul.open { display: flex; }
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, #F8F9FA 0%, #F4F1DE 100%);
+      padding-top: 64px;
+    }
+    .hero .container { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+    .hero-content { flex: 1; min-width: 300px; }
+    .hero-image { flex: 0 0 280px; }
+    .hero-image img {
+      width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 { font-size: 2.75rem; margin-bottom: 8px; }
+    .hero .subtitle {
+      font-size: 1.1rem; color: var(--green); font-weight: 500; margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero .tagline { color: var(--text-light); margin-bottom: 24px; max-width: 540px; }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px; border-radius: 8px; font-size: 0.875rem; font-weight: 500;
+      background: white; border: 1px solid var(--border); color: var(--text);
+      transition: all .2s;
+    }
+    .hero-links a:hover { background: var(--green); color: white; border-color: var(--green); }
+    .hero-links .primary-btn { background: var(--green); color: white; border-color: var(--green); }
+    .hero-links .primary-btn:hover { background: var(--green-light); border-color: var(--green-light); }
+    @media (max-width: 768px) {
+      .hero .container { flex-direction: column-reverse; text-align: center; }
+      .hero h1 { font-size: 2rem; }
+      .hero .tagline { max-width: 100%; }
+      .hero-links { justify-content: center; }
+      .hero-image { flex: 0 0 200px; }
+      .hero-image img { width: 200px; height: 200px; }
+    }
+
+    /* Cards grid */
+    .grid { display: grid; gap: 24px; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card {
+      background: var(--card); border-radius: var(--radius); padding: 32px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+    .card p { color: var(--text-light); font-size: 0.925rem; }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+
+    /* About */
+    .about-text { max-width: 720px; margin: 0 auto; text-align: center; color: var(--text-light); }
+    .about-text p + p { margin-top: 16px; }
+
+    /* Expertise pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+    .pills span {
+      padding: 6px 18px; border-radius: 20px; font-size: 0.85rem;
+      background: white; border: 1px solid var(--green); color: var(--green);
+    }
+
+    /* Publications */
+    .pub { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .pub:first-child { padding-top: 0; }
+    .pub:last-child { border-bottom: none; }
+    .pub h4 { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.95rem; margin-bottom: 4px; }
+    .pub .authors { font-size: 0.85rem; color: var(--text-light); }
+    .pub .journal { font-size: 0.85rem; color: var(--green-light); font-style: italic; }
+    .pub .year { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 10px; background: var(--cream); color: var(--green); font-weight: 600; margin-right: 8px; }
+    .pub-links { margin-top: 4px; }
+    .pub-links a { font-size: 0.8rem; margin-right: 12px; }
+
+    /* Projects */
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .project-tags span { font-size: 0.75rem; padding: 3px 10px; border-radius: 10px; background: var(--cream); color: var(--green); }
+
+    /* Contact */
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+    .contact-card {
+      display: flex; align-items: center; gap: 14px;
+      background: white; padding: 18px 24px; border-radius: var(--radius);
+      border: 1px solid var(--border); min-width: 240px;
+      transition: all .2s;
+    }
+    .contact-card:hover { border-color: var(--green); transform: translateY(-2px); }
+    .contact-card .icon { font-size: 1.4rem; flex-shrink: 0; }
+    .contact-card .label { font-size: 0.8rem; color: var(--text-light); }
+    .contact-card .value { font-weight: 500; font-size: 0.95rem; }
+
+    /* Mentoring CTA */
+    .cta-box {
+      background: var(--green); color: white; border-radius: var(--radius);
+      padding: 48px; text-align: center; margin-top: 48px;
+    }
+    .cta-box h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .cta-box p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-box a {
+      display: inline-block; padding: 12px 28px; border-radius: 8px;
+      background: white; color: var(--green); font-weight: 600; font-size: 0.925rem;
+      transition: all .2s;
+    }
+    .cta-box a:hover { background: var(--cream); transform: translateY(-1px); }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 32px 0; font-size: 0.825rem;
+      color: var(--text-light); border-top: 1px solid var(--border);
+    }
+    footer span { color: var(--green); }
+
+    /* Loading */
+    .loading { text-align: center; color: var(--text-light); padding: 20px; }
+    .loading::after { content: 'Loading...'; }
+
+    /* ORCID badge */
+    .orcid-badge { display: inline-flex; align-items: center; gap: 4px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">HA</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <ul id="navMenu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Hebatullah Abdulazeem</h1>
+      <div class="subtitle">MD, MSc — Physician &amp; Health Scientist</div>
+      <p class="tagline">
+        Associated Researcher at the Chair of Epidemiology, Technical University of Munich.
+        Systematic review specialist, digital health researcher, and evidence-based medicine advocate.
+      </p>
+      <div class="hero-links">
+        <a href="#research" class="primary-btn">Publications</a>
+        <a href="#contact">Get in Touch</a>
+        <a href="https://orcid.org/0000-0002-4529-7114" target="_blank" rel="noopener" class="orcid-badge">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="#A6CE39"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#fff" d="M86.3 186.2H70.5V79.1h15.8v107.1zm36.4-104.6c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12zm-8.2 104.6h16.4V116.2h-16.4v70zm68.2-56.5c-4.5-5.2-10.8-8.2-18.4-8.2-8.2 0-14.8 3-19.6 9.1v-7.7h-16.1v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4-6.8-6.6-15.5-9.9-26.1-9.9-9.5 0-17.6 3.2-24.3 9.7l-.3.3c-3.1 3.1-5.6 6.7-7.4 10.7h-.1v-9.2h-15.8v63.3h16.3v-37.6c0-7.2 3.5-11.4 10.1-11.4 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-5.1 1.8-9.2 5.4-12.3 3.2-2.8 7.1-4.2 11.7-4.2 6.3 0 10 4 10 11.4v37.6h16.3v-38.8c0-11-3.4-19.8-10.2-26.4"/></svg>
+          ORCID
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://i1.rgstatic.net/ii/profile.image/11431281238507504-1713956021222_Q128/Hebatullah-Abdulazeem.jpg"
+           alt="Hebatullah Abdulazeem"
+           onerror="this.parentElement.innerHTML='<div style=\'width:280px;height:280px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:5rem;color:var(--green);\'>HA</div>'">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container section-center">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>I am a physician and health scientist with a Master's degree in Health Sciences from the Technical University of Munich (TUM). My work focuses on digital health, systematic review methodology, and evidence-based medicine. As an Associated Researcher at the Chair of Epidemiology at TUM, I contribute to research that bridges clinical practice with digital innovation.</p>
+      <p>My research spans systematic reviews and meta-analyses on digital health technologies, AI in healthcare, and public health. I have co-authored over 20 publications with 1,800+ citations, and I serve as a peer reviewer for several journals. I am passionate about improving healthcare through rigorous evidence synthesis and the thoughtful integration of digital tools.</p>
+    </div>
+    <div class="pills">
+      <span>Digital Health</span>
+      <span>Systematic Reviews</span>
+      <span>Epidemiology</span>
+      <span>Primary Healthcare</span>
+      <span>AI in Medicine</span>
+      <span>Meta-Analysis</span>
+      <span>Evidence-Based Medicine</span>
+      <span>Health Literacy</span>
+    </div>
+  </div>
+</section>
+
+<section id="research" style="background: white;">
+  <div class="container section-center">
+    <h2>Research &amp; Publications</h2>
+    <p style="color: var(--text-light); margin-bottom: 8px;">24+ peer-reviewed articles &middot; 1,800+ citations</p>
+    <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 32px;">
+      Powered by <a href="https://orcid.org/0000-0002-4529-7114" target="_blank" rel="noopener">ORCID</a> &middot;
+      <a href="https://scholar.google.com/citations?user=LTS1SdQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </p>
+    <div id="publications" style="text-align: left; max-width: 720px; margin: 0 auto;">
+      <div class="loading"></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container section-center">
+    <h2>Ongoing Projects</h2>
+    <div class="grid grid-2" style="text-align: left;">
+      <div class="card">
+        <span class="card-icon">&#9881;</span>
+        <h3>AI &amp; Digital Health Acceptance</h3>
+        <p>Investigating the acceptance of Artificial Intelligence and Digital Health Technologies among healthcare providers using the UTAUT2 framework. A primary cross-sectional study.</p>
+        <div class="project-tags">
+          <span>UTAUT2</span>
+          <span>AI</span>
+          <span>Digital Health</span>
+          <span>Primary Study</span>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128200;</span>
+        <h3>ML in Primary Care</h3>
+        <p>Systematic review of clinical health conditions predicted by machine learning diagnostic and prognostic models trained or validated using real-world primary health care data.</p>
+        <div class="project-tags">
+          <span>Machine Learning</span>
+          <span>Primary Care</span>
+          <span>Systematic Review</span>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#127891;</span>
+        <h3>Women's Health &amp; Digital Health</h3>
+        <p>Transforming women's health, empowerment, and gender equality with digital health: evidence-based policy and practice recommendations.</p>
+        <div class="project-tags">
+          <span>Women's Health</span>
+          <span>Digital Health</span>
+          <span>Policy</span>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#129534;</span>
+        <h3>Clinical AI Knowledge &amp; Practice</h3>
+        <p>Systematic review and meta-analysis on knowledge, attitude, and practice of primary care physicians toward clinical AI-assisted digital health technologies.</p>
+        <div class="project-tags">
+          <span>AI</span>
+          <span>Primary Care</span>
+          <span>Knowledge Translation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teaching" style="background: white;">
+  <div class="container section-center">
+    <h2>Teaching &amp; Mentoring</h2>
+    <div class="grid grid-2" style="text-align: left;">
+      <div class="card">
+        <span class="card-icon">&#127979;</span>
+        <h3>Systematic Review Module &mdash; TUM</h3>
+        <p>Teaching Master's students at the Chair of Epidemiology, Technical University of Munich during Summer Semesters 2024 and 2025. Guiding students through formulating research questions, developing search strategies, bias assessment, and evidence interpretation in line with the Cochrane Handbook.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128218;</span>
+        <h3>Research Mentorship</h3>
+        <p>Providing one-to-one guidance to early-career researchers on systematic review methodology, study design, and academic writing. Supporting researchers in building confidence and independence in evidence-based research methods.</p>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h3>Systematic Review Consultation</h3>
+      <p>Are you seeking expert guidance to strengthen your systematic review or research project? Whether you need support in designing, conducting, or interpreting a high-quality systematic review, I offer one-to-one consultation.</p>
+      <a href="mailto:hebatullah.abdulazeem@tum.de">Request Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container section-center">
+    <h2>Contact &amp; Profiles</h2>
+    <div class="contact-grid">
+      <a href="mailto:hebatullah.abdulazeem@tum.de" class="contact-card">
+        <span class="icon">&#9993;</span>
+        <div><div class="label">Email</div><div class="value">tum.de</div></div>
+      </a>
+      <a href="https://scholar.google.com/citations?user=LTS1SdQAAAAJ" target="_blank" rel="noopener" class="contact-card">
+        <span class="icon">&#128218;</span>
+        <div><div class="label">Google Scholar</div><div class="value">1,800+ citations</div></div>
+      </a>
+      <a href="https://www.researchgate.net/profile/Hebatullah-Abdulazeem" target="_blank" rel="noopener" class="contact-card">
+        <span class="icon">&#128196;</span>
+        <div><div class="label">ResearchGate</div><div class="value">View profile</div></div>
+      </a>
+      <a href="https://orcid.org/0000-0002-4529-7114" target="_blank" rel="noopener" class="contact-card">
+        <span class="icon">
+          <svg width="20" height="20" viewBox="0 0 256 256" fill="#A6CE39"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#fff" d="M86.3 186.2H70.5V79.1h15.8v107.1zM108 79.1h-9.6v107.1h9.6V79.1zM138.7 150.8c-5.2 0-9.4-4.2-9.4-9.4s4.2-9.4 9.4-9.4 9.4 4.2 9.4 9.4-4.2 9.4-9.4 9.4z"/></svg>
+        </span>
+        <div><div class="label">ORCID</div><div class="value">0000-0002-4529-7114</div></div>
+      </a>
+      <a href="https://www.mri.tum.de/" target="_blank" rel="noopener" class="contact-card">
+        <span class="icon">&#127970;</span>
+        <div><div class="label">TUM</div><div class="value">Chair of Epidemiology</div></div>
+      </a>
+      <a href="https://engage.cochrane.org/profiles/17131" target="_blank" rel="noopener" class="contact-card">
+        <span class="icon">&#128214;</span>
+        <div><div class="label">Cochrane</div><div class="value">Community Profile</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Hebatullah Abdulazeem. Built with clarity and purpose.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+  document.getElementById('navMenu').querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navMenu').classList.remove('open');
+    });
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fetch publications from ORCID
+  (function() {
+    var container = document.getElementById('publications');
+    var orcidId = '0000-0002-4529-7114';
+
+    // Fallback publications (displayed immediately, replaced if API works)
+    var fallbackPubs = [
+      { title: 'Barriers and facilitators to utilizing digital health technologies by healthcare professionals', authors: 'IJ Borges do Nascimento, H Abdulazeem, LT Vasanthan, EZ Martinez, et al.', journal: 'npj Digital Medicine, 6(1), 161', year: 2023, doi: '10.1038/s41746-023-00888-1' },
+      { title: 'Knowledge, attitude, and practice of primary care physicians toward clinical AI-assisted digital health technologies: Systematic review and meta-analysis', authors: 'HM Abdulazeem, R Meckawy, S Schwarz, SJ Klug', journal: '2024', year: 2024 },
+      { title: 'Novel coronavirus infection (COVID-19) in humans: a scoping review and meta-analysis', authors: 'IJ Borges do Nascimento, N Cacic, HM Abdulazeem, TC Von Groote, et al.', journal: 'Journal of Clinical Medicine, 9(4), 941', year: 2020, doi: '10.3390/jcm9040941' },
+      { title: 'A systematic review of clinical health conditions predicted by machine learning diagnostic and prognostic models trained or validated using real-world primary health care data', authors: 'H Abdulazeem, S Whitelaw, G Schauberger, SJ Klug', journal: '2023', year: 2023 },
+      { title: 'The global effect of digital health technologies on health workers\' competencies and health workplace: an umbrella review', authors: 'IJB do Nascimento, HM Abdulazeem, LT Vasanthan, EZ Martinez, et al.', journal: '2023', year: 2023 },
+      { title: 'Impact of big data analytics on people\'s health: Overview of systematic reviews and recommendations for future studies', authors: 'IJ Borges do Nascimento, MS Marcolino, HM Abdulazeem, I Weerasekara, et al.', journal: '2021', year: 2021 },
+      { title: 'Clinical, laboratory and radiological characteristics and outcomes of novel coronavirus (SARS-CoV-2) infection in humans: a systematic review and series of meta-analyses', authors: 'IJ Borges do Nascimento, HM Abdulazeem, et al.', journal: '2020', year: 2020 },
+      { title: 'Telemedicine-based management of oral anticoagulation therapy: systematic review and meta-analysis', authors: 'HM Abdulazeem et al.', journal: '2023', year: 2023 },
+      { title: 'The effect of almonds consumption on blood pressure: A systematic review and dose-response meta-analysis of randomized control trials', authors: 'HM Abdulazeem et al.', journal: '2023', year: 2023 },
+      { title: 'Transforming women\'s health, empowerment, and gender equality with digital health: evidence-based policy and practice', authors: 'H Abdulazeem et al.', journal: '2024', year: 2024 }
+    ];
+
+    function renderPubs(pubs) {
+      container.innerHTML = '';
+      if (!pubs || pubs.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-light);">No publications found.</p>';
+        return;
+      }
+      pubs.sort(function(a, b) { return (b.year || 0) - (a.year || 0); });
+      pubs.forEach(function(pub) {
+        var div = document.createElement('div');
+        div.className = 'pub';
+        var html = '<h4><span class="year">' + (pub.year || '') + '</span>' + (pub.title || 'Untitled') + '</h4>';
+        if (pub.authors) html += '<div class="authors">' + pub.authors + '</div>';
+        if (pub.journal && pub.journal !== String(pub.year)) html += '<div class="journal">' + pub.journal + '</div>';
+        if (pub.doi) html += '<div class="pub-links"><a href="https://doi.org/' + pub.doi + '" target="_blank" rel="noopener">DOI</a></div>';
+        div.innerHTML = html;
+        container.appendChild(div);
+      });
+    }
+
+    // Show fallback immediately for speed
+    renderPubs(fallbackPubs);
+
+    // Try fetching from ORCID
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://pub.orcid.org/v3.0/' + orcidId + '/works', true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 400) {
+        try {
+          var data = JSON.parse(xhr.responseText);
+          var groups = data.group || [];
+          var pubs = [];
+          groups.forEach(function(group) {
+            var summary = group.work_summary && group.work_summary[0];
+            if (summary && summary.title && summary.title.title) {
+              var value = summary.title.title.value;
+              var year = summary.publication_date && summary.publication_date.year && summary.publication_date.year.value;
+              pubs.push({ title: value, year: parseInt(year, 10) || null });
+            }
+          });
+          if (pubs.length > 3) {
+            renderPubs(pubs);
+          }
+        } catch(e) { /* keep fallback */ }
+      }
+    };
+    xhr.onerror = function() { /* keep fallback */ };
+    xhr.send();
+  })();
+</script>
+
+</body>
+</html>
