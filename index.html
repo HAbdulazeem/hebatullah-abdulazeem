@@ -193,6 +193,19 @@
     }
     .cta-box a:hover { background: var(--cream); transform: translateY(-1px); }
 
+    /* Award */
+    .award-card { background: white; border: 2px solid var(--green); border-radius: var(--radius); padding: 32px 40px; text-align: center; max-width: 600px; margin: 0 auto; }
+    .award-card .award-icon { font-size: 2.5rem; margin-bottom: 8px; }
+    .award-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green); margin-bottom: 8px; }
+    .award-card p { color: var(--text-light); font-size: 0.95rem; margin: 0; }
+
+    /* Testimonials */
+    .testimonial-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+    .testimonial-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; max-width: 400px; }
+    .testimonial-card .quote { font-style: italic; font-size: 0.95rem; line-height: 1.6; color: var(--text); margin-bottom: 16px; position: relative; padding-left: 20px; }
+    .testimonial-card .quote::before { content: '\201C'; position: absolute; left: 0; top: -4px; font-size: 1.5rem; color: var(--green); font-family: 'Playfair Display', serif; }
+    .testimonial-card .attribution { font-size: 0.85rem; color: var(--green); font-weight: 600; }
+
     /* Footer */
     footer {
       text-align: center; padding: 32px 0; font-size: 0.825rem;
@@ -398,6 +411,42 @@
       <h3>Systematic Review Consultation</h3>
       <p>Are you seeking expert guidance to strengthen your systematic review or research project? Whether you need support in designing, conducting, or interpreting a high-quality systematic review, I offer one-to-one consultation.</p>
       <a href="https://calendar.app.google/MVtkv8TdqtAsA2Sc9" target="_blank" rel="noopener">Book a Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== AWARD (hidden until ready) ====== -->
+<!-- To show: remove style="display:none" from the section tag below -->
+<section id="award" style="display:none;">
+  <div class="container section-center">
+    <h2>Award</h2>
+    <div class="award-card">
+      <div class="award-icon">&#127942;</div>
+      <h3>[Award Name]</h3>
+      <p>[Issuing organization] &middot; [Year]</p>
+      <p style="margin-top:12px;font-size:0.9rem;color:var(--text-light);">[Brief description of the award and significance]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHAT OTHERS SAY ====== -->
+<!-- Replace the placeholder quotes below with real text and attributions -->
+<section id="testimonials" style="background: var(--bg);">
+  <div class="container section-center">
+    <h2>What Others Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote">[Quote text goes here — something someone publicly said about Hebatullah's work or character.]</div>
+        <div class="attribution">&mdash; [Name], [Title/Role]</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote">[Another quote.]</div>
+        <div class="attribution">&mdash; [Name], [Title/Role]</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote">[A third quote if available.]</div>
+        <div class="attribution">&mdash; [Name], [Title/Role]</div>
+      </div>
     </div>
   </div>
 </section>
