@@ -416,18 +416,16 @@
     var container = document.getElementById('publications');
     var orcidId = '0000-0002-4529-7114';
 
-    // Fallback publications (10 most recent, chronologically ordered)
+    // Fallback: digital health publications, most recent first
     var fallbackPubs = [
+      { title: 'Use of Digital Health Technologies for Dementia Care: Bibliometric Analysis and Systematic Report', authors: 'HM Abdulazeem, IJ Borges do Nascimento, I Weerasekara, A Sharifan, et al.', journal: 'JMIR Mental Health, 12, e64445', year: 2025, doi: '10.2196/64445' },
+      { title: 'Transforming women\'s health, empowerment, and gender equality with digital health: evidence-based policy and practice', authors: 'IJB do Nascimento, HM Abdulazeem, I Weerasekara, J Marquez, et al.', journal: 'The Lancet Digital Health, 7(6)', year: 2025 },
+      { title: 'Knowledge, attitude, and practice of primary care physicians toward clinical AI-assisted digital health technologies: Systematic review and meta-analysis', authors: 'HM Abdulazeem, R Meckawy, S Schwarz, D Novillo-Ortiz, SJ Klug', journal: 'SSRN Preprint', year: 2024 },
       { title: 'Barriers and facilitators to utilizing digital health technologies by healthcare professionals', authors: 'IJ Borges do Nascimento, H Abdulazeem, LT Vasanthan, EZ Martinez, et al.', journal: 'npj Digital Medicine, 6(1), 161', year: 2023, doi: '10.1038/s41746-023-00888-1' },
-      { title: 'Knowledge, attitude, and practice of primary care physicians toward clinical AI-assisted digital health technologies: Systematic review and meta-analysis', authors: 'HM Abdulazeem, R Meckawy, S Schwarz, SJ Klug, et al.', journal: '2024', year: 2024 },
-      { title: 'Novel coronavirus infection (COVID-19) in humans: a scoping review and meta-analysis', authors: 'IJ Borges do Nascimento, N Cacic, HM Abdulazeem, TC Von Groote, et al.', journal: 'Journal of Clinical Medicine, 9(4), 941', year: 2020, doi: '10.3390/jcm9040941' },
-      { title: 'A systematic review of clinical health conditions predicted by machine learning diagnostic and prognostic models trained or validated using real-world primary health care data', authors: 'H Abdulazeem, S Whitelaw, G Schauberger, SJ Klug, et al.', journal: '2023', year: 2023 },
-      { title: 'The global effect of digital health technologies on health workers\' competencies and health workplace: an umbrella review of systematic reviews and lexical-based and sentence-based analysis', authors: 'IJB do Nascimento, HM Abdulazeem, LT Vasanthan, EZ Martinez, et al.', journal: '2023', year: 2023 },
-      { title: 'Impact of big data analytics on people\'s health: Overview of systematic reviews and recommendations for future studies', authors: 'IJ Borges do Nascimento, MS Marcolino, HM Abdulazeem, I Weerasekara, et al.', journal: '2021', year: 2021 },
-      { title: 'Clinical, laboratory and radiological characteristics and outcomes of novel coronavirus (SARS-CoV-2) infection in humans: a systematic review and series of meta-analyses', authors: 'IJ Borges do Nascimento, HM Abdulazeem, TC Von Groote, N Cacic, et al.', journal: '2020', year: 2020 },
-      { title: 'Telemedicine-based management of oral anticoagulation therapy: systematic review and meta-analysis', authors: 'HM Abdulazeem, A Mirza, A Al-Sayed, I Weerasekara, et al.', journal: '2023', year: 2023 },
-      { title: 'The effect of almonds consumption on blood pressure: A systematic review and dose-response meta-analysis of randomized control trials', authors: 'HM Abdulazeem, A Sofi-Mahmudi, I Weerasekara, et al.', journal: '2023', year: 2023 },
-      { title: 'Transforming women\'s health, empowerment, and gender equality with digital health: evidence-based policy and practice', authors: 'H Abdulazeem, I Weerasekara, R Meckawy, et al.', journal: '2024', year: 2024 }
+      { title: 'The global effect of digital health technologies on health workers\' competencies and health workplace: an umbrella review of systematic reviews and lexical-based and sentence-based analysis', authors: 'IJB do Nascimento, HM Abdulazeem, LT Vasanthan, EZ Martinez, et al.', journal: 'The Lancet Digital Health, 5(8), e534-e544', year: 2023 },
+      { title: 'A systematic review of clinical health conditions predicted by machine learning diagnostic and prognostic models trained or validated using real-world primary health care data', authors: 'H Abdulazeem, S Whitelaw, G Schauberger, SJ Klug', journal: 'PLoS ONE, 18(9), e0274276', year: 2023, doi: '10.1371/journal.pone.0274276' },
+      { title: 'Telemedicine-based management of oral anticoagulation therapy: systematic review and meta-analysis', authors: 'LB Ferreira, RL de Almeida, A Arantes, H Abdulazeem, et al.', journal: 'Journal of Medical Internet Research, 25, e45922', year: 2023, doi: '10.2196/45922' },
+      { title: 'Impact of big data analytics on people\'s health: Overview of systematic reviews and recommendations for future studies', authors: 'IJ Borges do Nascimento, MS Marcolino, HM Abdulazeem, I Weerasekara, et al.', journal: 'Journal of Medical Internet Research, 23(4), e27275', year: 2021, doi: '10.2196/27275' }
     ];
 
     function renderPubs(pubs) {
