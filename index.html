@@ -449,35 +449,8 @@
       });
     }
 
-    // Show fallback immediately for speed
+    // Render the curated fallback list (includes authors, journals, bolded names)
     renderPubs(fallbackPubs);
-
-    // Try fetching from ORCID
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://pub.orcid.org/v3.0/' + orcidId + '/works', true);
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onload = function() {
-      if (xhr.status >= 200 && xhr.status < 400) {
-        try {
-          var data = JSON.parse(xhr.responseText);
-          var groups = data.group || [];
-          var pubs = [];
-          groups.forEach(function(group) {
-            var summary = group.work_summary && group.work_summary[0];
-            if (summary && summary.title && summary.title.title) {
-              var value = summary.title.title.value;
-              var year = summary.publication_date && summary.publication_date.year && summary.publication_date.year.value;
-              pubs.push({ title: value, year: parseInt(year, 10) || null });
-            }
-          });
-          if (pubs.length > 3) {
-            renderPubs(pubs.slice(0, 10));
-          }
-        } catch(e) { /* keep fallback */ }
-      }
-    };
-    xhr.onerror = function() { /* keep fallback */ };
-    xhr.send();
   })();
 </script>
 
